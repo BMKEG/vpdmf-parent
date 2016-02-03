@@ -140,7 +140,7 @@
 				        		</build>
 
 				        		<modules>
-				        			<module>${project.artifactId}-pojo</module>
+				        			<module>${project.artifactId}-es</module>
 				        		</modules>
 				        	</project>]]>
 									</echo>
