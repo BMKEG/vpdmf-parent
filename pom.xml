@@ -46,7 +46,7 @@
 							<configuration>
 								<executable>java</executable>
 								<commandlineArgs>
-									-classpath %classpath edu.isi.bmkeg.vpdmf.bin.BuildBasicVpdmfModel ${basedir} ${vpdmf.nestedModels} ${project.build.directory}/projects/ ${bmkegParentVersion}
+									-classpath %classpath edu.isi.bmkeg.vpdmf.bin.BuildBasicElasticSearchPojos ${basedir} ${vpdmf.nestedModels} ${project.build.directory}/projects/ ${bmkegParentVersion}
 								</commandlineArgs>
 							</configuration>
 						</execution>	
