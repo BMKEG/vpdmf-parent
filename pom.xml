@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>edu.isi.bmkeg</groupId>
 	<artifactId>vpdmf-parent</artifactId>
-	<version>1.1.5-SNAPSHOT</version>
+	<version>1.2.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>VPDMf Model Parent</name>
 
@@ -46,42 +46,14 @@
 							<configuration>
 								<executable>java</executable>
 								<commandlineArgs>
-									-classpath %classpath edu.isi.bmkeg.vpdmf.bin.BuildVpdmfMysqlMavenZip ${basedir} ${vpdmf.nestedModels} ${project.build.directory}/ ${bmkegParentVersion}
+									-classpath %classpath edu.isi.bmkeg.vpdmf.bin.BuildBasicElasticSearchPojos ${basedir} ${vpdmf.nestedModels} ${project.build.directory}/projects/ ${bmkegParentVersion}
 								</commandlineArgs>
 							</configuration>
-						</execution>
-						<execution>
-							<id>generate-maven-models</id>
-							<phase>generate-resources</phase>
-							<goals>
-								<goal>exec</goal>
-							</goals>
-							<inherited>true</inherited>
-							<configuration>
-								<executable>java</executable>
-								<commandlineArgs>
-									-classpath %classpath edu.isi.bmkeg.vpdmf.bin.BuildVpdmfModelMavenProject ${basedir} ${vpdmf.nestedModels} ${project.build.directory}/projects/ ${bmkegParentVersion}
-								</commandlineArgs>
-							</configuration>
-						</execution>
-						<execution>
-							<id>generate-maven-services</id>
-							<phase>generate-resources</phase>
-							<goals>
-								<goal>exec</goal>
-							</goals>
-							<inherited>true</inherited>
-							<configuration>
-								<executable>java</executable>
-								<commandlineArgs>
-									-classpath %classpath edu.isi.bmkeg.vpdmf.bin.BuildVpdmfServicesMavenProject ${basedir} ${vpdmf.nestedModels} ${project.build.directory}/projects/ ${bmkegParentVersion}
-								</commandlineArgs>
-							</configuration>
-						</execution>
+						</execution>	
 					</executions>
 				</plugin>
 
-				<!-- Installs artifact of non standard type zip explicitly -->
+				<!-- Installs artifact of non standard type zip explicitly 
 				<plugin>
 					<artifactId>maven-install-plugin</artifactId>
 					<executions>
@@ -100,9 +72,9 @@
 							</configuration>
 						</execution>
 					</executions>
-				</plugin>
+				</plugin>-->
 
-				<!-- Deploys artifact of non standard type zip explicitly -->
+				<!-- Deploys artifact of non standard type zip explicitly 
 				<plugin>
 					<artifactId>maven-deploy-plugin</artifactId>
 					<executions>
@@ -123,7 +95,7 @@
 							</configuration>
 						</execution>
 					</executions>
-				</plugin>
+				</plugin>-->
 
 				<plugin>
 					<artifactId>maven-antrun-plugin</artifactId>
@@ -168,10 +140,7 @@
 				        		</build>
 
 				        		<modules>
-				        			<module>${project.artifactId}-jpa</module>
-				        			<module>${project.artifactId}-services</module>
-				        			<module>${project.artifactId}-as</module>
-				        			<module>${project.artifactId}-as-services</module>
+				        			<module>${project.artifactId}-es</module>
 				        		</modules>
 				        	</project>]]>
 									</echo>
