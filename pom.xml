@@ -11,7 +11,7 @@
 		<groupId>edu.isi.bmkeg</groupId>
 		<artifactId>bmkeg-parent</artifactId>
 		<version>1.1.5-SNAPSHOT</version>
-		<relativePath>../../bmkeg-parent</relativePath>
+		<relativePath>../bmkeg-parent</relativePath>
 	</parent>
 
 	<properties>
